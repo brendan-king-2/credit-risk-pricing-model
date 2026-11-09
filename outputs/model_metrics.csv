@@ -1,0 +1,6 @@
+model,auc,ks
+Scorecard (training set),0.6714132402032664,0.2504102160404821
+Scorecard (holdout set),0.6660038661119314,0.24374414786606224
+"Gradient boosting, same variables (holdout)",0.6781485005712947,0.25951151137464246
+LendingClub's own interest rate (holdout),0.6663959278544815,0.23963637768265095
+Gradient boosting + LendingClub rate (holdout),0.7019145750626637,0.2927847649369099

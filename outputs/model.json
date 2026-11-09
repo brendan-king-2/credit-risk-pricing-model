@@ -1,0 +1,911 @@
+{
+ "meta": {
+  "source": "LendingClub public loan history (completed loans), via H2O.ai app-consumer-loan data/loan.csv",
+  "source_url": "https://raw.githubusercontent.com/h2oai/app-consumer-loan/master/data/loan.csv",
+  "loans": 163958,
+  "train": 114770,
+  "test": 49188,
+  "bad_rate": 0.18305297698191,
+  "n_vars_screened": 13
+ },
+ "scaling": {
+  "pdo": 20.0,
+  "base_score": 600.0,
+  "base_odds": 50.0
+ },
+ "intercept": -1.499582322755395,
+ "variables": [
+  {
+   "var": "loan_to_income",
+   "label": "Loan-to-income ratio",
+   "kind": "numeric",
+   "unit": "pct",
+   "coef": -0.3065785806169893,
+   "bins": [
+    {
+     "label": "<= 7%",
+     "count": 11402,
+     "bad_rate": 0.12287318014383442,
+     "woe": 0.46939391616311854,
+     "upper_edge": 0.07,
+     "missing": false
+    },
+    {
+     "label": "7% - 10%",
+     "count": 11000,
+     "bad_rate": 0.128,
+     "woe": 0.4226581608453342,
+     "upper_edge": 0.1,
+     "missing": false
+    },
+    {
+     "label": "10% - 13%",
+     "count": 11405,
+     "bad_rate": 0.1360806663743972,
+     "woe": 0.35216211323365754,
+     "upper_edge": 0.13,
+     "missing": false
+    },
+    {
+     "label": "13% - 16%",
+     "count": 12834,
+     "bad_rate": 0.1440704378993299,
+     "woe": 0.28586281516457024,
+     "upper_edge": 0.16,
+     "missing": false
+    },
+    {
+     "label": "16% - 19%",
+     "count": 11423,
+     "bad_rate": 0.15678893460562024,
+     "woe": 0.18629146579595804,
+     "upper_edge": 0.19,
+     "missing": false
+    },
+    {
+     "label": "19% - 22%",
+     "count": 10943,
+     "bad_rate": 0.1647628621036279,
+     "woe": 0.12718779324420032,
+     "upper_edge": 0.22,
+     "missing": false
+    },
+    {
+     "label": "22% - 26%",
+     "count": 12402,
+     "bad_rate": 0.18376068376068377,
+     "woe": -0.004894740761271247,
+     "upper_edge": 0.26,
+     "missing": false
+    },
+    {
+     "label": "26% - 30%",
+     "count": 10593,
+     "bad_rate": 0.2250542811290475,
+     "woe": -0.2594955124455424,
+     "upper_edge": 0.3,
+     "missing": false
+    },
+    {
+     "label": "30% - 36%",
+     "count": 11451,
+     "bad_rate": 0.2611125665880709,
+     "woe": -0.4557122085958172,
+     "upper_edge": 0.36,
+     "missing": false
+    },
+    {
+     "label": "> 36%",
+     "count": 11317,
+     "bad_rate": 0.313864098259256,
+     "woe": -0.713758808920536,
+     "upper_edge": null,
+     "missing": false
+    }
+   ]
+  },
+  {
+   "var": "term_months",
+   "label": "Loan term (months)",
+   "kind": "numeric",
+   "unit": "num",
+   "coef": -0.8668914334007963,
+   "bins": [
+    {
+     "label": "<= 36",
+     "count": 90998,
+     "bad_rate": 0.15339897580166598,
+     "woe": 0.21235992330058354,
+     "upper_edge": 36.0,
+     "missing": false
+    },
+    {
+     "label": "> 36",
+     "count": 23772,
+     "bad_rate": 0.29656739020696615,
+     "woe": -0.6321414922440678,
+     "upper_edge": null,
+     "missing": false
+    }
+   ]
+  },
+  {
+   "var": "dti",
+   "label": "Debt-to-income ratio (%)",
+   "kind": "numeric",
+   "unit": "num",
+   "coef": -0.4919464642133512,
+   "bins": [
+    {
+     "label": "<= 6",
+     "count": 11698,
+     "bad_rate": 0.13241579757223457,
+     "woe": 0.38369407098567365,
+     "upper_edge": 6.0,
+     "missing": false
+    },
+    {
+     "label": "6 - 9",
+     "count": 11349,
+     "bad_rate": 0.13710459071283815,
+     "woe": 0.343481115453789,
+     "upper_edge": 9.0,
+     "missing": false
+    },
+    {
+     "label": "9 - 11",
+     "count": 9452,
+     "bad_rate": 0.1516081252644943,
+     "woe": 0.22595899549466214,
+     "upper_edge": 11.0,
+     "missing": false
+    },
+    {
+     "label": "11 - 14",
+     "count": 16008,
+     "bad_rate": 0.15973263368315843,
+     "woe": 0.16426233119006917,
+     "upper_edge": 14.0,
+     "missing": false
+    },
+    {
+     "label": "14 - 16",
+     "count": 11032,
+     "bad_rate": 0.16597171863669324,
+     "woe": 0.11843313704703427,
+     "upper_edge": 16.0,
+     "missing": false
+    },
+    {
+     "label": "16 - 18",
+     "count": 10677,
+     "bad_rate": 0.18113702350847616,
+     "woe": 0.012663598053800391,
+     "upper_edge": 18.0,
+     "missing": false
+    },
+    {
+     "label": "18 - 20",
+     "count": 10116,
+     "bad_rate": 0.194642151047845,
+     "woe": -0.07586664565859008,
+     "upper_edge": 20.0,
+     "missing": false
+    },
+    {
+     "label": "20 - 23",
+     "count": 13096,
+     "bad_rate": 0.20830788026878436,
+     "woe": -0.16077771784773767,
+     "upper_edge": 23.0,
+     "missing": false
+    },
+    {
+     "label": "23 - 26",
+     "count": 9698,
+     "bad_rate": 0.23076923076923078,
+     "woe": -0.29198163655988996,
+     "upper_edge": 26.0,
+     "missing": false
+    },
+    {
+     "label": "> 26",
+     "count": 11644,
+     "bad_rate": 0.2760219855719684,
+     "woe": -0.531613816323052,
+     "upper_edge": null,
+     "missing": false
+    }
+   ]
+  },
+  {
+   "var": "revol_util",
+   "label": "Revolving credit utilization (%)",
+   "kind": "numeric",
+   "unit": "num",
+   "coef": -0.8854641649958753,
+   "bins": [
+    {
+     "label": "<= 20",
+     "count": 13332,
+     "bad_rate": 0.11378637863786378,
+     "woe": 0.5565499109184894,
+     "upper_edge": 20.0,
+     "missing": false
+    },
+    {
+     "label": "20 - 30",
+     "count": 9184,
+     "bad_rate": 0.13414634146341464,
+     "woe": 0.368643643747108,
+     "upper_edge": 30.0,
+     "missing": false
+    },
+    {
+     "label": "30 - 40",
+     "count": 11812,
+     "bad_rate": 0.15221808330511344,
+     "woe": 0.22128298464626261,
+     "upper_edge": 40.0,
+     "missing": false
+    },
+    {
+     "label": "40 - 50",
+     "count": 14056,
+     "bad_rate": 0.17231075697211157,
+     "woe": 0.07337668330273459,
+     "upper_edge": 50.0,
+     "missing": false
+    },
+    {
+     "label": "50 - 55",
+     "count": 7603,
+     "bad_rate": 0.18071813757727212,
+     "woe": 0.015407970174271443,
+     "upper_edge": 55.0,
+     "missing": false
+    },
+    {
+     "label": "55 - 65",
+     "count": 15793,
+     "bad_rate": 0.18875451149243336,
+     "woe": -0.037803346641742716,
+     "upper_edge": 65.0,
+     "missing": false
+    },
+    {
+     "label": "65 - 70",
+     "count": 7907,
+     "bad_rate": 0.20930820791703553,
+     "woe": -0.16691976819487292,
+     "upper_edge": 70.0,
+     "missing": false
+    },
+    {
+     "label": "70 - 80",
+     "count": 14556,
+     "bad_rate": 0.21592470458917284,
+     "woe": -0.20633803749777452,
+     "upper_edge": 80.0,
+     "missing": false
+    },
+    {
+     "label": "80 - 85",
+     "count": 6590,
+     "bad_rate": 0.22094081942336874,
+     "woe": -0.23585190372048578,
+     "upper_edge": 85.0,
+     "missing": false
+    },
+    {
+     "label": "> 85",
+     "count": 13826,
+     "bad_rate": 0.2462028063069579,
+     "woe": -0.37692922912741533,
+     "upper_edge": null,
+     "missing": false
+    },
+    {
+     "label": "Missing",
+     "count": 111,
+     "bad_rate": 0.24324324324324326,
+     "woe": -0.37323254426874347,
+     "missing": true
+    }
+   ]
+  },
+  {
+   "var": "annual_inc",
+   "label": "Annual income",
+   "kind": "numeric",
+   "unit": "$",
+   "coef": -1.1745683233466526,
+   "bins": [
+    {
+     "label": "<= $35,000",
+     "count": 14975,
+     "bad_rate": 0.24053422370617697,
+     "woe": -0.34614003484110667,
+     "upper_edge": 35000.0,
+     "missing": false
+    },
+    {
+     "label": "$35,000 - $40,000",
+     "count": 8141,
+     "bad_rate": 0.22933300577324653,
+     "woe": -0.28390491141595553,
+     "upper_edge": 40000.0,
+     "missing": false
+    },
+    {
+     "label": "$40,000 - $50,000",
+     "count": 17134,
+     "bad_rate": 0.20835765145325086,
+     "woe": -0.16104763009986617,
+     "upper_edge": 50000.0,
+     "missing": false
+    },
+    {
+     "label": "$50,000 - $60,000",
+     "count": 16621,
+     "bad_rate": 0.19493411948739547,
+     "woe": -0.07765255680516903,
+     "upper_edge": 60000.0,
+     "missing": false
+    },
+    {
+     "label": "$60,000 - $70,000",
+     "count": 13165,
+     "bad_rate": 0.1771363463729586,
+     "woe": 0.03990445746591703,
+     "upper_edge": 70000.0,
+     "missing": false
+    },
+    {
+     "label": "$70,000 - $80,000",
+     "count": 11594,
+     "bad_rate": 0.16120407107124374,
+     "woe": 0.15328221267023234,
+     "upper_edge": 80000.0,
+     "missing": false
+    },
+    {
+     "label": "$80,000 - $95,000",
+     "count": 11344,
+     "bad_rate": 0.15197461212976024,
+     "woe": 0.22316101102482935,
+     "upper_edge": 95000.0,
+     "missing": false
+    },
+    {
+     "label": "$95,000 - $120,000",
+     "count": 11593,
+     "bad_rate": 0.13301129992236693,
+     "woe": 0.3785193263424463,
+     "upper_edge": 120000.0,
+     "missing": false
+    },
+    {
+     "label": "> $120,000",
+     "count": 10203,
+     "bad_rate": 0.1237871214348721,
+     "woe": 0.4609077942276626,
+     "upper_edge": null,
+     "missing": false
+    }
+   ]
+  },
+  {
+   "var": "purpose",
+   "label": "Loan purpose",
+   "kind": "categorical",
+   "unit": "num",
+   "coef": -1.0043179899073156,
+   "bins": [
+    {
+     "label": "major_purchase",
+     "count": 3266,
+     "bad_rate": 0.12859767299448868,
+     "woe": 0.4166028950187878,
+     "missing": false
+    },
+    {
+     "label": "home_improvement",
+     "count": 6994,
+     "bad_rate": 0.15356019445238775,
+     "woe": 0.2107673937291003,
+     "missing": false
+    },
+    {
+     "label": "credit_card",
+     "count": 21417,
+     "bad_rate": 0.15641779894476351,
+     "woe": 0.18920708178456455,
+     "missing": false
+    },
+    {
+     "label": "Other (small)",
+     "count": 7632,
+     "bad_rate": 0.17203878406708595,
+     "woe": 0.0751466870022405,
+     "missing": false
+    },
+    {
+     "label": "debt_consolidation",
+     "count": 65416,
+     "bad_rate": 0.1899535281888223,
+     "woe": -0.04551671079877011,
+     "missing": false
+    },
+    {
+     "label": "other",
+     "count": 7329,
+     "bad_rate": 0.2166734888797926,
+     "woe": -0.21086774845267287,
+     "missing": false
+    },
+    {
+     "label": "small_business",
+     "count": 2716,
+     "bad_rate": 0.3085419734904271,
+     "woe": -0.6891837902085861,
+     "missing": false
+    }
+   ],
+   "raw_to_group": {
+    "debt_consolidation": "debt_consolidation",
+    "credit_card": "credit_card",
+    "other": "other",
+    "home_improvement": "home_improvement",
+    "major_purchase": "major_purchase",
+    "small_business": "small_business",
+    "car": "Other (small)",
+    "medical": "Other (small)",
+    "wedding": "Other (small)",
+    "moving": "Other (small)",
+    "house": "Other (small)",
+    "vacation": "Other (small)",
+    "educational": "Other (small)",
+    "renewable_energy": "Other (small)"
+   }
+  },
+  {
+   "var": "loan_amnt",
+   "label": "Loan amount",
+   "kind": "numeric",
+   "unit": "$",
+   "coef": -0.3087731391475685,
+   "bins": [
+    {
+     "label": "<= $8,000",
+     "count": 37486,
+     "bad_rate": 0.15925945686389587,
+     "woe": 0.16788246826442824,
+     "upper_edge": 8000.0,
+     "missing": false
+    },
+    {
+     "label": "$8,000 - $14,000",
+     "count": 33681,
+     "bad_rate": 0.17297586176182417,
+     "woe": 0.06881588241987613,
+     "upper_edge": 14000.0,
+     "missing": false
+    },
+    {
+     "label": "$14,000 - $16,000",
+     "count": 11085,
+     "bad_rate": 0.18583671628326567,
+     "woe": -0.018692841409701764,
+     "upper_edge": 16000.0,
+     "missing": false
+    },
+    {
+     "label": "$16,000 - $20,000",
+     "count": 13285,
+     "bad_rate": 0.21001129092961987,
+     "woe": -0.17107227133377312,
+     "upper_edge": 20000.0,
+     "missing": false
+    },
+    {
+     "label": "$20,000 - $25,000",
+     "count": 10040,
+     "bad_rate": 0.2151394422310757,
+     "woe": -0.20174639671573807,
+     "upper_edge": 25000.0,
+     "missing": false
+    },
+    {
+     "label": "> $25,000",
+     "count": 9193,
+     "bad_rate": 0.23963885565103885,
+     "woe": -0.34129299481350844,
+     "upper_edge": null,
+     "missing": false
+    }
+   ]
+  },
+  {
+   "var": "verification_status",
+   "label": "Income verified",
+   "kind": "categorical",
+   "unit": "num",
+   "coef": -0.22507919954640984,
+   "bins": [
+    {
+     "label": "not verified",
+     "count": 41545,
+     "bad_rate": 0.1509928992658563,
+     "woe": 0.23097113692821242,
+     "missing": false
+    },
+    {
+     "label": "verified",
+     "count": 73225,
+     "bad_rate": 0.2012427449641516,
+     "woe": -0.11727823245841291,
+     "missing": false
+    }
+   ],
+   "raw_to_group": {
+    "verified": "verified",
+    "not verified": "not verified"
+   }
+  }
+ ],
+ "iv": [
+  {
+   "var": "loan_to_income",
+   "label": "Loan-to-income ratio",
+   "iv": 0.14976283093208353,
+   "used": true
+  },
+  {
+   "var": "term_months",
+   "label": "Loan term (months)",
+   "iv": 0.13278313230180136,
+   "used": true
+  },
+  {
+   "var": "dti",
+   "label": "Debt-to-income ratio (%)",
+   "iv": 0.07749513868457361,
+   "used": true
+  },
+  {
+   "var": "revol_util",
+   "label": "Revolving credit utilization (%)",
+   "iv": 0.07567336177392227,
+   "used": true
+  },
+  {
+   "var": "annual_inc",
+   "label": "Annual income",
+   "iv": 0.06460698784937487,
+   "used": true
+  },
+  {
+   "var": "purpose",
+   "label": "Loan purpose",
+   "iv": 0.031417946108077834,
+   "used": true
+  },
+  {
+   "var": "loan_amnt",
+   "label": "Loan amount",
+   "iv": 0.02782854529720844,
+   "used": true
+  },
+  {
+   "var": "verification_status",
+   "label": "Income verified",
+   "iv": 0.027023516566916147,
+   "used": true
+  },
+  {
+   "var": "home_ownership",
+   "label": "Home ownership",
+   "iv": 0.01542716520081247,
+   "used": false
+  },
+  {
+   "var": "total_acc",
+   "label": "Total credit accounts",
+   "iv": 0.011636669542532426,
+   "used": false
+  },
+  {
+   "var": "emp_length",
+   "label": "Years employed",
+   "iv": 0.00894158444718892,
+   "used": false
+  },
+  {
+   "var": "credit_history_yrs",
+   "label": "Credit history (years)",
+   "iv": 0.00606626512987253,
+   "used": false
+  },
+  {
+   "var": "delinq_2yrs",
+   "label": "Delinquencies, last 2 years",
+   "iv": 0.0008177037439334807,
+   "used": false
+  }
+ ],
+ "coefficients": [
+  {
+   "term": "const",
+   "coef": -1.499582322755395,
+   "std_err": 0.008009703876941327,
+   "p_value": 0.0
+  },
+  {
+   "term": "loan_to_income",
+   "coef": -0.3065785806169893,
+   "std_err": 0.03900071120593006,
+   "p_value": 3.8154796186592444e-15
+  },
+  {
+   "term": "term_months",
+   "coef": -0.8668914334007963,
+   "std_err": 0.02350906547335447,
+   "p_value": 1.1726991190911421e-297
+  },
+  {
+   "term": "dti",
+   "coef": -0.4919464642133512,
+   "std_err": 0.029453197511476396,
+   "p_value": 1.2536974595758065e-62
+  },
+  {
+   "term": "revol_util",
+   "coef": -0.8854641649958753,
+   "std_err": 0.030352813435926915,
+   "p_value": 4.3449130099873974e-187
+  },
+  {
+   "term": "annual_inc",
+   "coef": -1.1745683233466526,
+   "std_err": 0.057704489804004666,
+   "p_value": 4.202253194733105e-92
+  },
+  {
+   "term": "purpose",
+   "coef": -1.0043179899073156,
+   "std_err": 0.045437239246529273,
+   "p_value": 2.9306771587417217e-108
+  },
+  {
+   "term": "loan_amnt",
+   "coef": -0.3087731391475685,
+   "std_err": 0.10326996269336532,
+   "p_value": 0.0027901326119536794
+  },
+  {
+   "term": "verification_status",
+   "coef": -0.22507919954640984,
+   "std_err": 0.053302546501075555,
+   "p_value": 2.414224510485731e-05
+  }
+ ],
+ "metrics": [
+  {
+   "model": "Scorecard (training set)",
+   "auc": 0.6714132402032664,
+   "ks": 0.2504102160404821
+  },
+  {
+   "model": "Scorecard (holdout set)",
+   "auc": 0.6660038661119314,
+   "ks": 0.24374414786606224
+  },
+  {
+   "model": "Gradient boosting, same variables (holdout)",
+   "auc": 0.6781485005712947,
+   "ks": 0.25951151137464246
+  },
+  {
+   "model": "LendingClub's own interest rate (holdout)",
+   "auc": 0.6663959278544815,
+   "ks": 0.23963637768265095
+  },
+  {
+   "model": "Gradient boosting + LendingClub rate (holdout)",
+   "auc": 0.7019145750626637,
+   "ks": 0.2927847649369099
+  }
+ ],
+ "calibration": [
+  {
+   "decile": 1,
+   "loans": 4919,
+   "predicted_pd": 0.06300039684139015,
+   "observed_bad_rate": 0.06485057938605407,
+   "min_pd": 0.026594229376572714,
+   "max_pd": 0.07897077456345923
+  },
+  {
+   "decile": 2,
+   "loans": 4919,
+   "predicted_pd": 0.09093473407792567,
+   "observed_bad_rate": 0.10002032933523074,
+   "min_pd": 0.07897077456345923,
+   "max_pd": 0.10163805205616644
+  },
+  {
+   "decile": 3,
+   "loans": 4919,
+   "predicted_pd": 0.11078646347384032,
+   "observed_bad_rate": 0.11059158365521447,
+   "min_pd": 0.10163805205616644,
+   "max_pd": 0.1185881679846294
+  },
+  {
+   "decile": 4,
+   "loans": 4918,
+   "predicted_pd": 0.12979344386144592,
+   "observed_bad_rate": 0.13359089060593737,
+   "min_pd": 0.1185881679846294,
+   "max_pd": 0.1379310344827585
+  },
+  {
+   "decile": 5,
+   "loans": 4919,
+   "predicted_pd": 0.1494678476088018,
+   "observed_bad_rate": 0.15470624110591583,
+   "min_pd": 0.1379310344827585,
+   "max_pd": 0.15985670201390612
+  },
+  {
+   "decile": 6,
+   "loans": 4919,
+   "predicted_pd": 0.17061160676594223,
+   "observed_bad_rate": 0.16934336247204718,
+   "min_pd": 0.15985670201390612,
+   "max_pd": 0.18452167999546276
+  },
+  {
+   "decile": 7,
+   "loans": 4918,
+   "predicted_pd": 0.19578319138024775,
+   "observed_bad_rate": 0.20618137454249694,
+   "min_pd": 0.18452167999546276,
+   "max_pd": 0.2120318654868141
+  },
+  {
+   "decile": 8,
+   "loans": 4919,
+   "predicted_pd": 0.22786463025143575,
+   "observed_bad_rate": 0.24334214271193333,
+   "min_pd": 0.2120318654868141,
+   "max_pd": 0.24884591313128818
+  },
+  {
+   "decile": 9,
+   "loans": 4919,
+   "predicted_pd": 0.27494682350223765,
+   "observed_bad_rate": 0.275869079081114,
+   "min_pd": 0.24884591313128818,
+   "max_pd": 0.3115547534700581
+  },
+  {
+   "decile": 10,
+   "loans": 4919,
+   "predicted_pd": 0.38640688151180325,
+   "observed_bad_rate": 0.3720268347225046,
+   "min_pd": 0.3115547534700581,
+   "max_pd": 0.6902691335224662
+  }
+ ],
+ "hosmer_lemeshow": {
+  "stat": 21.330509855431757,
+  "p_value": 0.006319397077642397
+ },
+ "psi_train_vs_holdout": 0.0002868075414405296,
+ "bands": [
+  {
+   "loans": 10876,
+   "bad_rate": 0.30286870172857666,
+   "avg_score": 514.2269216623758,
+   "avg_pd": 0.2820537018638215,
+   "lc_rate": 0.1491314913571166,
+   "score_from": null,
+   "score_to": 520.0,
+   "breakeven_apr": 0.16627379460593533,
+   "label": "Below 520"
+  },
+  {
+   "loans": 22728,
+   "bad_rate": 0.2191129883843717,
+   "avg_score": 524.9652411122844,
+   "avg_pd": 0.21269575797969578,
+   "lc_rate": 0.14025885251671946,
+   "score_from": 520.0,
+   "score_to": 530.0,
+   "breakeven_apr": 0.13803709242382162,
+   "label": "520-529"
+  },
+  {
+   "loans": 31662,
+   "bad_rate": 0.16496115216979346,
+   "avg_score": 534.5859073968795,
+   "avg_pd": 0.162241321592764,
+   "lc_rate": 0.13236683721811635,
+   "score_from": 530.0,
+   "score_to": 540.0,
+   "breakeven_apr": 0.1190605880581786,
+   "label": "530-539"
+  },
+  {
+   "loans": 30335,
+   "bad_rate": 0.1227295203560244,
+   "avg_score": 544.3269820339542,
+   "avg_pd": 0.12144118165286019,
+   "lc_rate": 0.12448815559584638,
+   "score_from": 540.0,
+   "score_to": 550.0,
+   "breakeven_apr": 0.10455607206202125,
+   "label": "540-549"
+  },
+  {
+   "loans": 20705,
+   "bad_rate": 0.09234484424052161,
+   "avg_score": 553.9908234725912,
+   "avg_pd": 0.09000587018240976,
+   "lc_rate": 0.11470425501086695,
+   "score_from": 550.0,
+   "score_to": 560.0,
+   "breakeven_apr": 0.09384586603417233,
+   "label": "550-559"
+  },
+  {
+   "loans": 9473,
+   "bad_rate": 0.06808825081811465,
+   "avg_score": 563.7629050987016,
+   "avg_pd": 0.06586092639977525,
+   "lc_rate": 0.10313430803335796,
+   "score_from": 560.0,
+   "score_to": 570.0,
+   "breakeven_apr": 0.08587491600295585,
+   "label": "560-569"
+  },
+  {
+   "loans": 4142,
+   "bad_rate": 0.048044422984065666,
+   "avg_score": 575.2580878802511,
+   "avg_pd": 0.04547689764322676,
+   "lc_rate": 0.09222107677450507,
+   "score_from": 570.0,
+   "score_to": null,
+   "breakeven_apr": 0.07930887528560401,
+   "label": "570 and above"
+  }
+ ],
+ "purpose_names": {
+  "debt_consolidation": "Debt consolidation",
+  "credit_card": "Credit card refinancing",
+  "home_improvement": "Home improvement",
+  "major_purchase": "Major purchase",
+  "small_business": "Small business",
+  "other": "Other",
+  "car": "Car",
+  "medical": "Medical",
+  "wedding": "Wedding",
+  "moving": "Moving",
+  "house": "House",
+  "vacation": "Vacation",
+  "educational": "Education",
+  "renewable_energy": "Renewable energy"
+ },
+ "verification_names": {
+  "verified": "Verified",
+  "not verified": "Not verified"
+ },
+ "score_stats": {
+  "mean": 534.4703382938928,
+  "min": 464.0,
+  "max": 591.0
+ }
+}
